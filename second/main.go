@@ -5,6 +5,14 @@ import (
 	"strconv"
 )
 
+func IsOdd(number int) bool {
+	return number%2 == 0
+}
+
+func IsTriple(number int) bool {
+	return number%3 == 0
+}
+
 func main() {
 	fmt.Print("Any integer number: ")
 	var user_input string
@@ -15,9 +23,14 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	if number%2 == 0 {
+	if IsOdd(number) {
 		fmt.Printf("'%v' is odd.\n", number)
 	} else {
 		fmt.Printf("'%v' is even.\n", number)
+	}
+	if IsTriple(number) {
+		fmt.Printf("'%v' is divisible by three.\n", number)
+	} else {
+		fmt.Printf("'%v' is not divisible by three.\n", number)
 	}
 }
